@@ -1,0 +1,303 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+  color: black;
+  background: black;
+}
+
+/* Navigation Styles */
+nav {
+  position: fixed;
+  background: black;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 12;
+}
+
+nav .menu {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.menu .logo a {
+  text-decoration: none;
+  color: green;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.menu ul {
+  display: inline-flex;
+}
+
+.menu ul li {
+  list-style: none;
+  margin-left: 7px;
+}
+
+.menu ul li:first-child {
+  margin-left: 0px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: orange;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu ul li a:hover {
+  background: red;
+  color: black;
+}
+
+/* Header Image Styles */
+.img {
+  background: url('https://us.123rf.com/450wm/sarayutsy/sarayutsy2001/sarayutsy200100082/138792582-in-the-hands-of-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-on-nature.jpg?ver=6') no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.img::before {
+  content: 'Future';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Centered Content Styles */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.center .title {
+  color: white;
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.center .sub_title {
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.center .btns {
+  margin-top: 20px;
+}
+
+.center .btns button {
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.center .btns button:first-child {
+  color: red;
+  background: none;
+}
+
+.btns button:first-child:hover {
+  background: white;
+  color: black;
+}
+
+.center .btns button:last-child {
+  background: white;
+  color: black;
+}
+
+/* Content Section Styles */
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/* About Content Styles */
+#about {
+  padding: 50px;
+  background-image: url('https://i.pinimg.com/736x/54/fc/29/54fc29bd3a4bd6468f0fbb05e98f9486.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#about h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#about img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+/* Services Content Styles */
+#services {
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/high/4k-forest-under-dim-sunlight-bsj6viu69x5leztf.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#services h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#services p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#services img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+/* Contact Content Styles */
+#contact {
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/featured/4k-forest-7sfd6znw2ry6hnlt.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#contact h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Feedback Content Styles */
+#feedback {
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/high/4k-forest-with-dirt-pathway-sssu9mpkfvsfewvs.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+form {
+  max-width: 200px;
+  margin: auto;
+  background-color: white; /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#feedback h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#feedback p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* contributions Content Styles */
+#contributions {
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/high/4k-ultra-hd-2160p-night-forest-ot3y1b0ss9core9m.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#contributions h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#contributions p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Additional Content for Learn More and Donate Styles */
+#learnMore{
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/high/4k-forest-painting-sym2gbnhl4hk8b3s.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#learnMore h2,
+#donate h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#learnMore p,
+#donate p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#learnMore img,
+#donate img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+}

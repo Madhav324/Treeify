@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save Trees, Save Earth</title>
+  <style>
+    /* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+  color: black;
+  background: black;
+}
+
+/* Navigation Styles */
+nav {
+  position: fixed;
+  background: black;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 12;
+}
+
+nav .menu {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.menu .logo a {
+  text-decoration: none;
+  color: green;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.menu ul {
+  display: inline-flex;
+}
+
+.menu ul li {
+  list-style: none;
+  margin-left: 7px;
+}
+
+.menu ul li:first-child {
+  margin-left: 0px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: orange;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu ul li a:hover {
+  background: red;
+  color: black;
+}
+
+/* Header Image Styles */
+.img {
+  background: url('https://us.123rf.com/450wm/sarayutsy/sarayutsy2001/sarayutsy200100082/138792582-in-the-hands-of-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-on-nature.jpg?ver=6') no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.img::before {
+  content: 'Future';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Centered Content Styles */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.center .title {
+  color: white;
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.center .sub_title {
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.center .btns {
+  margin-top: 20px;
+}
+
+.center .btns button {
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.center .btns button:first-child {
+  color: red;
+  background: none;
+}
+
+.btns button:first-child:hover {
+  background: white;
+  color: black;
+}
+
+.center .btns button:last-child {
+  background: white;
+  color: black;
+}
+
+/* Content Section Styles */
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/* About Content Styles */
+#about {
+  padding: 50px;
+  background-image: url('https://i.pinimg.com/736x/54/fc/29/54fc29bd3a4bd6468f0fbb05e98f9486.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#about h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#about img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+/* Services Content Styles */
+#services {
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/high/4k-forest-under-dim-sunlight-bsj6viu69x5leztf.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#services h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#services p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#services img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+/* Contact Content Styles */
+#contact {
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/featured/4k-forest-7sfd6znw2ry6hnlt.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#contact h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Feedback Content Styles */
+#feedback {
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/high/4k-forest-with-dirt-pathway-sssu9mpkfvsfewvs.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+form {
+  max-width: 200px;
+  margin: auto;
+  background-color: white; /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#feedback h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#feedback p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* contributions Content Styles */
+#contributions {
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/high/4k-ultra-hd-2160p-night-forest-ot3y1b0ss9core9m.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#contributions h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#contributions p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Additional Content for Learn More and Donate Styles */
+#learnMore{
+  padding: 50px;
+  background-image: url('https://wallpapers.com/images/high/4k-forest-painting-sym2gbnhl4hk8b3s.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#learnMore h2,
+#donate h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#learnMore p,
+#donate p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#learnMore img,
+#donate img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="donate.html">Treeify</a>
+      </div>
+      <ul>
+        <li><a href="#about" onclick="toggleContent('about')">About</a></li>
+        <li><a href="#services" onclick="toggleContent('services')">Services</a></li>
+        <li><a href="#contact" onclick="toggleContent('contact')">Contact</a></li>
+        <li><a href="#feedback" onclick="toggleContent('feedback')">Feedback</a></li>
+        <li><a href="#contributions" onclick="toggleContent('contributions')">Contributions</a></li>
+        <li><a href="login.html">Sign Up/Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="img"></div>
+
+  <div class="center">
+    <div class="title">Help us grow a greener future! Your support can make a difference.</div>
+    <div class="sub_title">Support green initiatives and donate now.</div>
+    <div class="btns">
+      <button href="#learnMore" onclick="toggleContent('learnMore')">Learn More</button>
+      <a href="donate.html"><button>Donate</button></a>
+    </div>
+  </div>
+
+  <!-- About Content -->
+  <div id="about" class="hidden">
+    <h2>About Us</h2>
+    <p>Welcome to Treeify!
+
+      At Treeify, we are passionate about protecting our environment for future generations. We believe in the importance of afforestation and the positive impact it can have on our planet. Our mission is to raise awareness about the benefits of planting trees, such as cleaner air, reduced pollution, and a healthier ecosystem.
+      
+      Through our initiatives, we aim to inspire individuals and communities to take action and contribute to the preservation of our environment. By donating to [Your Organization Name], you are supporting our efforts to plant trees, conserve forests, and create a sustainable future for all.
+      
+      Join us in our journey towards a greener, healthier planet!</p>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+  <!-- Services Content -->
+  <div id="services" class="hidden">
+    <h2>Our Services</h2>
+    <p>
+      (1.)<b>Tree Planting Programs</b>: We organize tree planting events in collaboration with local communities to increase green cover and combat deforestation.
+      <br>(2.)<b>Environmental Education</b>: We offer educational workshops and seminars to raise awareness about the importance of trees and environmental conservation.
+      <br>(3.)<b>Advocacy and Policy</b>: We advocate for policies that promote afforestation, conservation, and sustainable land management practices.
+      <br>(4.)<b>Fundraising Campaigns</b>: We conduct fundraising campaigns to support tree planting initiatives and other environmental projects.
+      <br>(5.)<b>Community Engagement</b>: We engage with communities to foster a sense of ownership and responsibility towards the environment through volunteer opportunities and outreach programs.
+    </p>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+  <!-- Contact Content -->
+  <div id="contact" class="hidden">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to get involved? Feel free to reach out to us!
+      <br>
+      Email: [Your Email Address]
+      <br>Phone: [Your Phone Number]
+      <br>Address: [Your Organization Address]
+      <br><br>
+      You can also connect with us on social media:
+      <br>  
+    Facebook: [Your Facebook Page]
+    <br>Twitter: [Your Twitter Handle]
+    <br>Instagram: [Your Instagram Handle]</p>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+  <!-- Feedback Content -->
+<div id="feedback" class="hidden">
+  <h2>Feedback</h2>
+  <p>We value your feedback! If you have any suggestions, comments, or concerns, please share them with us. Your input helps us improve and better serve our community and the environment.</p>
+  
+  <form id="feedbackForm" onsubmit="submitFeedback(event)">
+    <div class="form-group">
+      <label for="name">Name:-</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:-</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="3" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<script>
+  function submitFeedback(event) {
+    event.preventDefault();
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    // You can handle the feedback submission here, such as sending it to a server or logging it
+    console.log("Feedback received from " + name + " (" + email + "): " + message);
+
+    // Optionally, display a confirmation message
+    alert("Thank you for your feedback!");
+    
+    // Clear the form
+    document.getElementById("feedbackForm").reset();
+  }
+</script>
+
+
+  <!-- Additional Content for Learn More -->
+  <div id="learnMore" class="hidden">
+    <h2>Learn More</h2>
+    <p>    Articles and Blogs: Discover insights into tree planting benefits, sustainable forestry, and deforestation impacts.
+      <br>Videos and Infographics: Engaging visuals highlight the importance of trees in our ecosystem.
+      <br>Research and Reports: Access scientific papers on environmental science and conservation efforts.
+      <br>Success Stories: Inspiring narratives of communities restoring habitats and planting trees.</p>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+  <!-- Additional Content for Learn More -->
+  <div id="contributions" class="hidden">
+    <h2>Contributions</h2>
+    <p>    Your contribution, no matter the size, plays a crucial role in our mission to protect and preserve the environment. Here's how you can contribute:
+<br>
+      Spread Awareness: Share our message with your friends, family, and colleagues. By raising awareness about the importance of afforestation and environmental conservation, you help amplify our impact.
+      <br>
+      Volunteer: Join us in our tree planting events, conservation projects, and community outreach efforts. Your time and energy are invaluable resources that contribute to the success of our initiatives.
+      <br>
+      Skills and Expertise: If you have skills or expertise in areas such as marketing, fundraising, or environmental science, consider volunteering your talents to support our organization. Your knowledge can help us reach our goals more effectively.
+      <br>
+      In-Kind Donations: In addition to monetary donations, we also welcome in-kind contributions such as equipment, supplies, or services that can support our projects and operations.
+      <br>
+      Advocacy: Advocate for policies and practices that promote afforestation, conservation, and sustainability in your community and beyond. Your voice can influence positive change and create a lasting impact on the environment.</p>
+      <br><br><br><br><br><br><br><br>
+  </div>
+
+
+  <script>
+    function toggleContent(id) {
+      var content = document.getElementById(id);
+      content.classList.toggle("hidden");
+      content.classList.toggle("visible");
+    }
+  </script>
+</body>
+</html>

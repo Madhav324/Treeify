@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title align="center">Registration Form</title>
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  background-color: green; /* Red background */
+  background-image: url('https://i.pinimg.com/originals/7b/ee/24/7bee247b258dafe0ed7d913d0c1e2b4b.jpg') ;
+  background-size: cover;
+}
+
+h2 {
+  color: red; /* Blue heading color */
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+  background-color: white; /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #32cd32; /* Lime green submit button */
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #2e8b57; /* Sea green on hover */
+}
+  </style>
+  <script>
+    function validateForm() {
+      // Get values from the form
+      let name = document.forms["registrationForm"]["fname"].value;
+      let email = document.forms["registrationForm"]["email"].value;
+      let date = document.forms["registrationForm"]["date"].value;
+      let gender = document.forms["registrationForm"]["gender"].value;
+      let contactNumber = document.forms["registrationForm"]["contactNumber"].value;
+      let username = document.forms["registrationForm"]["username"].value;
+      let password = document.forms["registrationForm"]["password"].value;
+      let confirmPassword = document.forms["registrationForm"]["confirmPassword"].value;
+
+      // Check if name is empty
+      if (name == "") {
+        alert("Name must be filled out");
+        return false;
+      }
+
+      // Check if email is empty and valid
+      if (email == "") {
+        alert("Email must be filled out");
+        return false;
+      } else {
+        // Regular expression to validate email format
+        let emailRegex = /^\S+@\S+\.\S+$/;
+        if (!emailRegex.test(email)) {
+          alert("Invalid email format");
+          return false;
+        }
+      }
+
+      // Check if date is selected
+      if (date == "") {
+        alert("Please select a date");
+        return false;
+      }
+
+      // Check if gender is selected
+      if (gender === "") {
+        alert("Please select a gender");
+        return false;
+      }
+
+      // Check if contact number is filled out
+      if (contactNumber == "") {
+        alert("Contact number must be filled out");
+        return false;
+      }
+
+      // Check if username is filled out
+      if (username == "") {
+        alert("Username must be filled out");
+        return false;
+      }
+
+      // Check if password is filled out
+      if (password == "") {
+        alert("Password must be filled out");
+        return false;
+      }
+
+      // Check if confirm password matches password
+      if (confirmPassword !== password) {
+        alert("Confirm password does not match the password");
+        return false;
+      }
+
+      // Validate date of birth
+      let currentDate = new Date();
+      let selectedDate = new Date(date + "T00:00:00Z");
+
+      if (selectedDate.getFullYear() > 2024) {
+        alert("Invalid date of birth. Year cannot exceed 2024");
+        return false;
+      }
+
+      // If all validations pass, the form is considered valid
+      return true;
+    }
+  </script>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form name="registrationForm" onsubmit="return validateForm()">
+  <label for="fname">Name:</label>
+  <input type="text" id="fname" name="fname">
+
+  <br>
+
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email">
+
+  <br>
+
+  <label for="date">Date of Birth:</label>
+  <input type="date" id="date" name="date">
+
+  <br>
+
+  <label for="gender">Gender:</label>
+  <select id="gender" name="gender">
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select>
+
+  <br>
+
+  <label for="contactNumber">Contact Number:</label>
+  <input type="text" id="contactNumber" name="contactNumber">
+
+  <br>
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username">
+
+  <br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password">
+
+  <br>
+
+  <label for="confirmPassword">Confirm Password:</label>
+  <input type="password" id="confirmPassword" name="confirmPassword">
+
+  <br>
+
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
